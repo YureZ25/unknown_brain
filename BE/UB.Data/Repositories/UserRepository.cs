@@ -8,5 +8,7 @@ namespace UB.Data.Repositories
         public UserRepository(AppDbContext context) : base(context)
         {
         }
+
+
     }
 }
