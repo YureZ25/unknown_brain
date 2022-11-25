@@ -1,0 +1,9 @@
+﻿using UB.Services.Dtos;
+
+namespace UB.Services.Interfaces
+{
+    public interface IGradeService
+    {
+        Task<RespModel<IList<GradeDto>>> GetAllAsync();
+    }
+}
