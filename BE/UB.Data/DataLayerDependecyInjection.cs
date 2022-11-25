@@ -17,7 +17,7 @@ namespace UB.Data
             services.AddTransient<IUoW, UoW>();
 
             services.AddTransient<IUserRepository, UserRepository>();
-            services.AddTransient<GradeRepository>();
+            services.AddTransient<IGradeRepository,GradeRepository>();
         }
     }
 }
