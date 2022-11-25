@@ -1,6 +1,7 @@
 ﻿namespace UB.Data.Domain
 {
-    internal class User
+    public class User : Entity
     {
+        public string UserName { get; set; }
     }
 }
