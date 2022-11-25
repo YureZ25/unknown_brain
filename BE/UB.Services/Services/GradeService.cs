@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using UB.Data.Repositories.Interfaces;
 using UB.Services.Dtos;
-using UB.Services.Interfaces;
+using UB.Services.Services.Interfaces;
 
 namespace UB.Services.Services
 {

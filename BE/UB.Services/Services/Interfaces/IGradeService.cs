@@ -1,6 +1,6 @@
 ﻿using UB.Services.Dtos;
 
-namespace UB.Services.Interfaces
+namespace UB.Services.Services.Interfaces
 {
     public interface IGradeService
     {
