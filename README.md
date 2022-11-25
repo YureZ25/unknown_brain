@@ -31,3 +31,8 @@ npm run start
 ```
 npm run build
 ```
+### Run SQL scripts
+
+> Don't forget add psql to PATH
+
+Run from root of project: `psql -U postgres -d ub -f .\BE\UB.Data\SqlScripts\<script_name>`
