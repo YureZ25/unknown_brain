@@ -2,7 +2,7 @@ using UB.Data.Domain;
 
 namespace UB.Data.Repositories.Interfaces
 {
-    public interface IGradeRepository : IRepository<User>
+    public interface IGradeRepository : IRepository<Grade>
     {
 
     }
