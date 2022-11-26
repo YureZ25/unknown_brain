@@ -60,7 +60,7 @@ export class WelcomeFormComponent {
     const data = this.welcomeForm.getRawValue();
     this.postForm(data);
   }
-
+    
   private postForm(data: IWelcomeFormFields): void {
     const body: WelcomeFormVM = new WelcomeFormVM({
       userName: data.userName,
@@ -71,7 +71,7 @@ export class WelcomeFormComponent {
       comment: data.comment,
     });
     this.welcomeFormService.post(body).subscribe(data => {
-      alert('Данные отправлены, загляните в консоль чтобы убедится в этом');
+      alert('������ ����������, ��������� � ������� ����� �������� � ����');
       console.log(data);
     });
   }
