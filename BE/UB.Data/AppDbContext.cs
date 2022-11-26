@@ -14,5 +14,6 @@ namespace UB.Data
         public DbSet<Specialization> Specializations { get; set; }
         public DbSet<Grade> Grades { get; set; }
         public DbSet<WelcomeForm> WelcomeForms { get; set; }
+        public DbSet<Recomendation> Recomendations { get; set; }
     }
 }
