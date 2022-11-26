@@ -1,8 +1,21 @@
 import { Component } from '@angular/core';
 import { GradeService } from 'src/app/services/grade.service';
-import { IGradeDto } from 'src/app/models/grade.model';
-import { ISpecialization } from 'src/app/models/specialization.model';
+import { IGradeDto } from 'src/app/models/response/grade.model';
+import { ISpecializationDto } from 'src/app/models/response/specialization.model';
 import { SpecializationService } from 'src/app/services/specialization.services';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { IWelcomeFormVM, WelcomeFormVM } from 'src/app/models/request/welcomeForm.model';
+import { WelcomeFormService } from 'src/app/services/welcome-form.service';
+
+interface IWelcomeFormFields
+{
+  userName: string;
+  specialization: ISpecializationDto;
+  grade: IGradeDto;
+  isPM: boolean;
+  isDocWriter: boolean;
+  comment: string | undefined;
+}
 
 @Component({
   selector: 'app-welcome-form',
@@ -11,17 +24,55 @@ import { SpecializationService } from 'src/app/services/specialization.services'
 })
 export class WelcomeFormComponent {
   grades: IGradeDto[] | undefined;
-  specs: ISpecialization[] | undefined;
+  specs: ISpecializationDto[] | undefined;
 
-  grade: IGradeDto | undefined;
-  spec: ISpecialization | undefined;
+  welcomeForm: FormGroup;
 
   constructor(
     private gradeService: GradeService,
     private specializationService: SpecializationService,
-  ) { }
+    private welcomeFormService: WelcomeFormService,
+  ) { 
+    this.welcomeForm = new FormGroup({
+      userName: new FormControl('', [ Validators.required ]),
+      specialization: new FormControl(null, [ Validators.required ]),
+      grade: new FormControl(null, [ Validators.required ]),
+      isPM: new FormControl(false, [ Validators.required ]),
+      isDocWriter: new FormControl(false, [ Validators.required ]),
+      comment: new FormControl(''),
+    });
+  }
 
   ngOnInit() {
+    this.gradeService.getAll().subscribe(data => this.grades = data);
+    this.specializationService.getAll().subscribe(data => this.specs = data);
+  }
+
+  public isFieldInvalid(field: string): boolean {
+    if (this.welcomeForm.controls[field].invalid 
+      && this.welcomeForm.controls[field].touched) {
+      return true; 
+    }
+    return false;
+  }
+
+  public submit(): void {
+    const data = this.welcomeForm.getRawValue();
+    this.postForm(data);
+  }
     
+  private postForm(data: IWelcomeFormFields): void {
+    const body: WelcomeFormVM = new WelcomeFormVM({
+      userName: data.userName,
+      specializationId: data.specialization.id,
+      gradeId: data.grade.id,
+      isPM: data.isPM,
+      isDocWriter: data.isDocWriter,
+      comment: data.comment,
+    });
+    this.welcomeFormService.post(body).subscribe(data => {
+      alert('������ ����������, ��������� � ������� ����� �������� � ����');
+      console.log(data);
+    });
   }
 }

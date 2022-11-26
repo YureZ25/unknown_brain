@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { ISpecialization } from "../models/specialization.model";
+import { ISpecializationDto } from "../models/response/specialization.model";
 import { BaseService } from "./base.service";
 
 @Injectable({
@@ -14,7 +14,7 @@ export class SpecializationService extends BaseService {
         private http: HttpClient,
     ) { super(); }
 
-    getAll(): Observable<ISpecialization[]> {
-        return this.http.get<ISpecialization[]>(this.controllerPath);
+    getAll(): Observable<ISpecializationDto[]> {
+        return this.http.get<ISpecializationDto[]>(this.controllerPath);
     }
 }
