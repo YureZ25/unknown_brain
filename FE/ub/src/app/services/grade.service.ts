@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from "rxjs";
-import { IGradeDto } from "../models/grade.model";
+import { IGradeDto } from "../models/response/grade.model";
 import { BaseService } from "./base.service";
 
 @Injectable({

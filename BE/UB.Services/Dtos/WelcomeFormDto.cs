@@ -5,6 +5,7 @@ namespace UB.Services.Dtos
 {
     public class WelcomeFormDto
     {
+        public Guid Id { get; set; }
         public bool IsPM { get; set; }
         public bool IsDocWriter { get; set; }
         public UserDto User { get; set; }

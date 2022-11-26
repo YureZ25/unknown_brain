@@ -5,8 +5,8 @@ namespace UB.Services.Dtos
 {
     public class SpecializationDto
     {
-        public string Name { get; set; }
         public Guid Id { get; set; }
+        public string Name { get; set; }
     }
 
     public class SpecializationMappingProfile : Profile
