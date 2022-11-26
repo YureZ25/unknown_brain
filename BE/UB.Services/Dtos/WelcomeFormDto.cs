@@ -11,6 +11,7 @@ namespace UB.Services.Dtos
         public UserDto User { get; set; }
         public SpecializationDto Specialization { get; set; }
         public GradeDto Grade { get; set; }
+        public string Comment { get; set; }
     }
 
     public class WelcomeFormMappingProfile : Profile

@@ -17,5 +17,7 @@ namespace UB.Data.Domain
         public Specialization Specialization { get; set; }
 
         public Grade Grade { get; set; }
+
+        public string Comment { get; set; }
     }
 }

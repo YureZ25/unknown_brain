@@ -1,3 +1,5 @@
+DELETE FROM public."Specializations";
+
 INSERT INTO public."Specializations"(
 	"Id", "Name")
 VALUES 

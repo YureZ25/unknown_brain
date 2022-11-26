@@ -10,4 +10,5 @@ export interface IWelcomeFormDto
     user: IUserDto | undefined;
     grade: IGradeDto | undefined;
     specialization: ISpecializationDto | undefined;
+    comment: string | undefined;
 }

@@ -5,6 +5,7 @@ export interface IWelcomeFormVM
     gradeId: string | undefined;
     isPM: boolean | undefined;
     isDocWriter: boolean | undefined;
+    comment: string | undefined;
 }
 
 export class WelcomeFormVM implements IWelcomeFormVM {
@@ -13,6 +14,7 @@ export class WelcomeFormVM implements IWelcomeFormVM {
     gradeId: string | undefined;
     isPM: boolean | undefined;
     isDocWriter: boolean | undefined;
+    comment: string | undefined;
     
     constructor(data?: IWelcomeFormVM) {
         this.userName = data?.userName;
@@ -20,5 +22,6 @@ export class WelcomeFormVM implements IWelcomeFormVM {
         this.gradeId = data?.gradeId;
         this.isPM = data?.isPM;
         this.isDocWriter = data?.isDocWriter;
+        this.comment = data?.comment;
     }
 }

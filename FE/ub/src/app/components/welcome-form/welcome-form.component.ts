@@ -14,6 +14,7 @@ interface IWelcomeFormFields
   grade: IGradeDto;
   isPM: boolean;
   isDocWriter: boolean;
+  comment: string | undefined;
 }
 
 @Component({
@@ -57,8 +58,7 @@ export class WelcomeFormComponent {
 
   public submit(): void {
     const data = this.welcomeForm.getRawValue();
-    console.log(data);
-    //this.postForm(data);
+    this.postForm(data);
   }
 
   private postForm(data: IWelcomeFormFields): void {
@@ -68,9 +68,10 @@ export class WelcomeFormComponent {
       gradeId: data.grade.id,
       isPM: data.isPM,
       isDocWriter: data.isDocWriter,
+      comment: data.comment,
     });
     this.welcomeFormService.post(body).subscribe(data => {
-      alert('Данные отправлены');
+      alert('Данные отправлены, загляните в консоль чтобы убедится в этом');
       console.log(data);
     });
   }

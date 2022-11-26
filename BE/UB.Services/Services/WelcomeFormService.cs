@@ -64,6 +64,7 @@ namespace UB.Services.Services
                 Specialization = specialization,
                 IsDocWriter = welcomeFormVM.IsDocWriter,
                 IsPM = welcomeFormVM.IsPM,
+                Comment = welcomeFormVM.Comment,
             };
             await _welcomeFormRepository.InsertAsync(welcomeForm);
 

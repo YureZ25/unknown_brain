@@ -7,5 +7,6 @@
         public Guid GradeId { get; set; }
         public bool IsPM { get; set; }
         public bool IsDocWriter { get; set; }
+        public string Comment { get; set; }
     }
 }
