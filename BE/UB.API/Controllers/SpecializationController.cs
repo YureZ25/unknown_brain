@@ -3,7 +3,7 @@ using UB.Services.Interfaces;
 
 namespace UB.API.Controllers
 {
-    [Route("api/specification")]
+    [Route("api/specialization")]
     public class SpecializationController : BaseApiController
     {
         private readonly ISpecializationService _specializationService;
