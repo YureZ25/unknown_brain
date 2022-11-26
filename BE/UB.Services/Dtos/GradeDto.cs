@@ -5,7 +5,7 @@ namespace UB.Services.Dtos
 {
     public class GradeDto
     {
-        public string Grade { get; set; }
+        public string Name { get; set; }
     }
 
     public class GradeMappingProfile : Profile

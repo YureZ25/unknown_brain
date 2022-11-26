@@ -12,7 +12,7 @@ namespace UB.Data.Repositories
     public abstract class BaseRepository<TEntity> 
         : IRepository<TEntity> where TEntity : Entity
     {
-        private readonly AppDbContext _context;
+        protected readonly AppDbContext _context;
 
         public BaseRepository(AppDbContext context)
         {

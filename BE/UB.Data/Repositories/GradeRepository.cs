@@ -3,7 +3,7 @@ using UB.Data.Repositories.Interfaces;
 
 namespace UB.Data.Repositories
 {
-    internal class GradeRepository : BaseRepository<User>, IGradeRepository
+    internal class GradeRepository : BaseRepository<Grade>, IGradeRepository
     {
         public GradeRepository(AppDbContext context) : base(context)
         {

@@ -17,11 +17,11 @@ namespace UB.Services.Services
             _mapper = mapper;
         }
 
-        public async Task<RespModel<IList<SpecializationsDto>>> GetAllAsync()
+        public async Task<RespModel<IList<SpecializationDto>>> GetAllAsync()
         {
             var Specializations = await _specializationRepository.GetAllAsync();
-            var SpecializationsDto = _mapper.Map<IList<SpecializationsDto>>(Specializations);
-            return new RespModel<IList<SpecializationsDto>>(SpecializationsDto);
+            var SpecializationsDto = _mapper.Map<IList<SpecializationDto>>(Specializations);
+            return new RespModel<IList<SpecializationDto>>(SpecializationsDto);
         }
     }
 }
