@@ -6,6 +6,8 @@
 
         public string Recomendation { get; set; }
 
+        public string RecomendationUrl { get; set; }
+
         public int Order { get; set;  }
     }
 }

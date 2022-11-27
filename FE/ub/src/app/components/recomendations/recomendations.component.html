@@ -1,9 +1,10 @@
 <div class="row justify-content-center">
     <div class="col-10 col-sm-8 col-md-8 col-lg-6 col-xl-6 col-xxl-6">
-        <h5>Привет! Исходя из заявленной тобой специализации и уровня мы собрали 
-            рекомендации которые помогут тебе быстрее вырасти по уровню знаний и зарплате))
-        </h5>
-
+        <div>
+            <h5>Привет! Исходя из заявленной тобой специализации и уровня мы собрали 
+                рекомендации которые помогут тебе быстрее вырасти по уровню знаний и зарплате))
+            </h5>
+        </div>
         <table class="table table-hover" *ngIf="(recomendations?.length ?? 0) > 0">
             <thead>
                 <tr>
@@ -18,15 +19,22 @@
                 </tr>
             </tbody>
         </table>
+        <div>
+            <h6 class="mb-3">{{welcomeForm?.grade?.recomendation ?? ''}}</h6>
+            <qrcode class="qrcodeImage" [qrdata]="welcomeForm?.grade?.recomendationUrl ?? ''" [width]="128" [errorCorrectionLevel]="'M'"></qrcode>
 
-        <h6>{{welcomeForm?.grade?.recomendation ?? ''}}</h6>
-
-        <h6 *ngIf="!welcomeForm?.isDocWriter">Учись писать доку)</h6>
-
-        <h6 *ngIf="!welcomeForm?.isPM">Рекомендуем прокачать навыки управления командой
-Рекомендуемая литература: "Как пасти котов" автор Дж. Рейнвотера."</h6>
-
-        <p>Если хочешь узнать рекомендации для другого уровня - просто поменяй 
-            при заполнении данные))</p>
+        <div>
+            <h6 class="mb-3" *ngIf="!welcomeForm?.isDocWriter">Учись писать доку)</h6>
+            <qrcode class="qrcodeImage" [qrdata]="'https://youtu.be/dQw4w9WgXcQ'" [width]="128" [errorCorrectionLevel]="'M'"></qrcode>
+        </div>
+        <div>
+            <h6 class="mb-3" *ngIf="!welcomeForm?.isPM">Рекомендуем прокачать навыки управления командой
+                Рекомендуемая литература: "Как пасти котов" автор Дж. Рейнвотера."</h6>
+            <qrcode class="qrcodeImage" [qrdata]="'https://drive.google.com/drive/folders/18FW1KzIJUfX-UFLdFC2aAKS2VwhAcys8'" [width]="128" [errorCorrectionLevel]="'M'"></qrcode>
+        </div>
+        <div>
+            <p>Если хочешь узнать рекомендации для другого уровня - просто поменяй 
+                при заполнении данные))</p>
+        </div>
     </div>
 </div>
