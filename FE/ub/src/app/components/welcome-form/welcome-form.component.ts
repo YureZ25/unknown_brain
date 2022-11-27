@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { GradeService } from 'src/app/services/grade.service';
 import { IGradeDto } from 'src/app/models/response/grade.model';
 import { ISpecializationDto } from 'src/app/models/response/specialization.model';
@@ -29,6 +30,7 @@ export class WelcomeFormComponent {
   welcomeForm: FormGroup;
 
   constructor(
+    private route: Router,
     private gradeService: GradeService,
     private specializationService: SpecializationService,
     private welcomeFormService: WelcomeFormService,
@@ -71,8 +73,14 @@ export class WelcomeFormComponent {
       comment: data.comment,
     });
     this.welcomeFormService.post(body).subscribe(data => {
-      alert('������ ����������, ��������� � ������� ����� �������� � ����');
-      console.log(data);
+      this.route.navigate(
+        ['/recomendations'],
+        {
+          queryParams: {
+            'welcomeFormId': data.id,
+          },
+        },
+      );
     });
   }
 }

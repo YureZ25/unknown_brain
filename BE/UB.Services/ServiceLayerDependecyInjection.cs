@@ -15,6 +15,7 @@ namespace UB.Services
             services.AddScoped<IGradeService, GradeService>();
             services.AddScoped<ISpecializationService, SpecializationService>();
             services.AddScoped<IWelcomeFormService, WelcomeFormService>();
+            services.AddScoped<IRecomendationService, RecomendationService>();
         }
     }
 }

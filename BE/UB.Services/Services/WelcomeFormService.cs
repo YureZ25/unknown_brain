@@ -33,18 +33,20 @@ namespace UB.Services.Services
             _UoW = UoW;
         }
 
+        public async Task<RespModel<WelcomeFormDto>> GetByIdAsync(Guid id)
+        {
+            var welcomeForm = await _welcomeFormRepository.GetByIdAsync(id);
+
+            if (welcomeForm is null)
+                return new RespModel<WelcomeFormDto>($"Welcome form with id: {id} is not found");
+
+            var welcomeFormDto = _mapper.Map<WelcomeFormDto>(welcomeForm);
+
+            return new RespModel<WelcomeFormDto>(welcomeFormDto);
+        }
+
         public async Task<RespModel<WelcomeFormDto>> ProcessAsync(WelcomeFormVM welcomeFormVM)
         {
-            var user = await _userRepository.GetByUserNameAsync(welcomeFormVM.UserName);
-            if (user is null)
-            {
-                user = new()
-                {
-                    UserName = welcomeFormVM.UserName,
-                };
-                await _userRepository.InsertAsync(user);
-            }
-
             var specialization = await _specializationRepository.GetByIdAsync(welcomeFormVM.SpecializationId);
             if (specialization is null)
             {
@@ -55,6 +57,22 @@ namespace UB.Services.Services
             if (grade is null)
             {
                 return new RespModel<WelcomeFormDto>($"Grade with id {welcomeFormVM.GradeId} is not found");
+            }
+
+            var user = await _userRepository.GetByUserNameAsync(welcomeFormVM.UserName);
+            if (user is null)
+            {
+                user = new()
+                {
+                    UserName = welcomeFormVM.UserName,
+                    Grade = grade,
+                };
+                await _userRepository.InsertAsync(user);
+            }
+            else
+            {
+                user.Grade = grade;
+                await _userRepository.UpdateAsync(user);
             }
 
             var welcomeForm = new WelcomeForm
