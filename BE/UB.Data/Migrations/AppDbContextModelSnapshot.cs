@@ -36,7 +36,7 @@ namespace UB.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Grades");
+                    b.ToTable("Grades", (string)null);
                 });
 
             modelBuilder.Entity("UB.Data.Domain.Recomendation", b =>
@@ -63,7 +63,7 @@ namespace UB.Data.Migrations
 
                     b.HasIndex("SpecializationId");
 
-                    b.ToTable("Recomendations");
+                    b.ToTable("Recomendations", (string)null);
                 });
 
             modelBuilder.Entity("UB.Data.Domain.Specialization", b =>
@@ -77,7 +77,7 @@ namespace UB.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Specializations");
+                    b.ToTable("Specializations", (string)null);
                 });
 
             modelBuilder.Entity("UB.Data.Domain.User", b =>
@@ -91,7 +91,7 @@ namespace UB.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("UB.Data.Domain.WelcomeForm", b =>
@@ -126,7 +126,7 @@ namespace UB.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("WelcomeForms");
+                    b.ToTable("WelcomeForms", (string)null);
                 });
 
             modelBuilder.Entity("UB.Data.Domain.Recomendation", b =>

@@ -12,10 +12,13 @@ namespace UB.Data.Domain
 
         public bool IsDocWriter { get; set; }
 
+        public Guid UserId { get; set; }
         public User User { get; set; }
 
+        public Guid SpecializationId { get; set; }
         public Specialization Specialization { get; set; }
 
+        public Guid GradeId { get; set; }
         public Grade Grade { get; set; }
 
         public string Comment { get; set; }

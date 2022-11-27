@@ -6,11 +6,13 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app.component';
 import { WelcomeFormComponent } from './components/welcome-form/welcome-form.component';
+import { RecomendationsComponent } from './components/recomendations/recomendations.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeFormComponent,
+    RecomendationsComponent,
   ],
   imports: [
     BrowserModule,

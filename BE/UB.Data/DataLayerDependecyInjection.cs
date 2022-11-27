@@ -20,6 +20,7 @@ namespace UB.Data
             services.AddTransient<IGradeRepository,GradeRepository>();
             services.AddTransient<ISpecializationRepository, SpecializationRepository>();
             services.AddTransient<IWelcomeFormRepository, WelcomeFormRepository>();
+            services.AddTransient<IRecomendationRepository, RecomendationRepository>();
         }
     }
 }

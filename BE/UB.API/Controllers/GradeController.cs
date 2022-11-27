@@ -4,7 +4,7 @@ using UB.Services.Services.Interfaces;
 namespace UB.API.Controllers
 {
     [Route("api/grade")]
-    public class GradeController: BaseApiController
+    public class GradeController : BaseApiController
     {
         private readonly IGradeService _gradeService;
 
