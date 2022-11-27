@@ -45,11 +45,11 @@ VALUES
 (gen_random_uuid(),'fd291452-1b4d-42a4-8a59-b7bd501ec5aa','e52fba2a-8769-4a23-9f1e-38cd7ef1dda5','Майкл Физерс','Эффективная работа с унаследованным кодом'),
 (gen_random_uuid(),'fd291452-1b4d-42a4-8a59-b7bd501ec5aa','62927c5d-be45-4025-80f8-ccb489d368d3','Кэти Уорр','Надежность нейронных сетей (Neural Nets). Укрепляем устойчивость ИИ к обману'),
 (gen_random_uuid(),'fd291452-1b4d-42a4-8a59-b7bd501ec5aa','62927c5d-be45-4025-80f8-ccb489d368d3','Сильвейн Гуггер, Джереми Ховард','Глубокое обучение с fastai и PyTorch: минимум формул, минимум кода, максимум эффективности'),
-(gen_random_uuid(),'fd291452-1b4d-42a4-8a59-b7bd501ec5aa','be13ed96-e25b-4772-b7db-a6b3fece1886','Lee Copeland','A Practitioner’s Guide to Software Test Design'),
+(gen_random_uuid(),'fd291452-1b4d-42a4-8a59-b7bd501ec5aa','be13ed96-e25b-4772-b7db-a6b3fece1886','Lee Copeland','A Practitioners Guide to Software Test Design'),
 (gen_random_uuid(),'fd291452-1b4d-42a4-8a59-b7bd501ec5aa','be13ed96-e25b-4772-b7db-a6b3fece1886','Джеральд Вайнберг','Идеальное программное обеспечение и другие иллюзии в тестировании'),
 (gen_random_uuid(),'fd291452-1b4d-42a4-8a59-b7bd501ec5aa','ca21fab2-9acd-4f05-815c-43bcd6d6aa83','Дональд Норман','Дизайн привычных вещей'),
 (gen_random_uuid(),'fd291452-1b4d-42a4-8a59-b7bd501ec5aa','ca21fab2-9acd-4f05-815c-43bcd6d6aa83','Максим Ильяхов, Людмила Сарычева','Пиши, сокращай'),
 (gen_random_uuid(),'fd291452-1b4d-42a4-8a59-b7bd501ec5aa','71effd2d-6e19-4e82-9b62-7577ec8af0fb','Кэти Сьерра','Badass: Making Users Awesome'),
 (gen_random_uuid(),'fd291452-1b4d-42a4-8a59-b7bd501ec5aa','71effd2d-6e19-4e82-9b62-7577ec8af0fb','Эндрю Гроув','Выживают только параноики'),
 (gen_random_uuid(),'fd291452-1b4d-42a4-8a59-b7bd501ec5aa','39899140-9dbb-4ca2-befb-e8e39ec084a1','Илан Голдштейн','SCRUM без ошибок'),
-(gen_random_uuid(),'fd291452-1b4d-42a4-8a59-b7bd501ec5aa','39899140-9dbb-4ca2-befb-e8e39ec084a1','Роман Пихлер','Управление продуктом в SCRUM')
+(gen_random_uuid(),'fd291452-1b4d-42a4-8a59-b7bd501ec5aa','39899140-9dbb-4ca2-befb-e8e39ec084a1','Роман Пихлер','Управление продуктом в SCRUM');
