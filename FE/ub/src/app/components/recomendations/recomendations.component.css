@@ -1,0 +1,14 @@
+/* Put this code in your CSS file */
+
+/* The div container */
+.qrcodeImage {
+    display: flex;
+    flex: 1;
+  }
+  
+  /* Add custom styles here */
+  .right {
+    display: flex;
+    flex: 1;
+    justify-content: right;
+  }

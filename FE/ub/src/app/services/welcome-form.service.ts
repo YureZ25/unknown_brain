@@ -15,6 +15,10 @@ export class WelcomeFormService extends BaseService {
         private http: HttpClient,
     ) { super(); }
 
+    getById(id: string): Observable<IWelcomeFormDto> {
+        return this.http.get<IWelcomeFormDto>(`${this.controllerPath}/${id}`);
+    }
+
     post(body: WelcomeFormVM): Observable<IWelcomeFormDto> {
         return this.http.post<IWelcomeFormDto>(this.controllerPath, body);
     }
