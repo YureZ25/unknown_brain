@@ -7,6 +7,7 @@ namespace UB.Services.Dtos
     {
         public Guid Id {get; set;}
         public string Name { get; set; }
+        public string Recomendation { get; set; }
     }
 
     public class GradeMappingProfile : Profile
