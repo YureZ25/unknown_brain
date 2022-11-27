@@ -19,5 +19,15 @@ namespace UB.API.Controllers
             var result = await _userService.GetAllAsync();
             return SendResponse(result);
         }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetByIdAsync([FromRoute] string id)
+        {
+            if (!Guid.TryParse(id, out Guid guid))
+                return BadRequest("Guid is invalid");
+
+            var result = await _userService.GetByIdAsync(guid);
+            return SendResponse(result);
+        }
     }
 }

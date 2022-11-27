@@ -11,6 +11,16 @@ namespace UB.Services.Services
         private readonly IRecomendationRepository _recomendationRepository;
         private readonly IMapper _mapper;
 
+        public RecomendationService(
+            IWelcomeFormRepository welcomeFormRepository, 
+            IRecomendationRepository recomendationRepository, 
+            IMapper mapper)
+        {
+            _welcomeFormRepository = welcomeFormRepository;
+            _recomendationRepository = recomendationRepository;
+            _mapper = mapper;
+        }
+
         public async Task<RespModel<IList<RecomendationDto>>> GenerateRecomendations(Guid welcomeFormId)
         {
             var welcomeForm = await _welcomeFormRepository.GetByIdAsync(welcomeFormId);

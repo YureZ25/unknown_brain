@@ -4,7 +4,7 @@
             рекомендации которые помогут тебе быстрее вырасти по уровню знаний и зарплате))
         </h5>
 
-        <table class="table table-hover">
+        <table class="table table-hover" *ngIf="(recomendations?.length ?? 0) > 0">
             <thead>
                 <tr>
                     <th scope="col">Автор</th>
@@ -12,13 +12,9 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Роберт Мартин</td>
-                    <td>Чистый код</td>
-                </tr>
-                <tr>
-                    <td>Дэвид Томас, Эндрю Хант</td>
-                    <td>Программист-прагматик</td>
+                <tr *ngFor="let recomendation of recomendations">
+                    <td>{{recomendation.author}}</td>
+                    <td>{{recomendation.title}}</td>
                 </tr>
             </tbody>
         </table>

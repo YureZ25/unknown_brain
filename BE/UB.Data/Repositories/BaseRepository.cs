@@ -19,29 +19,29 @@ namespace UB.Data.Repositories
             _context = context;
         }
 
-        public async Task<IList<TEntity>> GetAllAsync()
+        public virtual async Task<IList<TEntity>> GetAllAsync()
         {
             return await _context.Set<TEntity>().ToListAsync();
         }
 
-        public async Task<TEntity> GetByIdAsync(Guid id)
+        public virtual async Task<TEntity> GetByIdAsync(Guid id)
         {
             return await _context.Set<TEntity>().SingleOrDefaultAsync(e => e.Id == id);
         }
 
-        public async Task<TEntity> InsertAsync(TEntity entity)
+        public virtual async Task<TEntity> InsertAsync(TEntity entity)
         {
             await _context.Set<TEntity>().AddAsync(entity);
             return entity;
         }
 
-        public async Task<TEntity> UpdateAsync(TEntity entity)
+        public virtual async Task<TEntity> UpdateAsync(TEntity entity)
         {
             _context.Set<TEntity>().Update(entity);
             return await Task.FromResult(entity);
         }
 
-        public async Task<TEntity> DelateAsync(Guid id)
+        public virtual async Task<TEntity> DelateAsync(Guid id)
         {
             var entity = await GetByIdAsync(id);
             _context.Set<TEntity>().Remove(entity);

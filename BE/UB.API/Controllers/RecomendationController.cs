@@ -3,7 +3,7 @@ using UB.Services.Services.Interfaces;
 
 namespace UB.API.Controllers
 {
-    [Route("api/grade")]
+    [Route("api/recomendation")]
     public class RecomendationController : BaseApiController
     {
         private readonly IRecomendationService _recomendationService;

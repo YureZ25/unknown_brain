@@ -14,6 +14,16 @@ namespace UB.API.Controllers
             _welcomeFormService = welcomeFormService;
         }
 
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetByIdAsync([FromRoute] string id)
+        {
+            if (!Guid.TryParse(id, out Guid guid))
+                return BadRequest("Guid is invalid");
+
+            var result = await _welcomeFormService.GetByIdAsync(guid);
+            return SendResponse(result);
+        }
+
         [HttpPost]
         public async Task<IActionResult> PostFormAsync([FromBody] WelcomeFormVM welcomeFormVM)
         {

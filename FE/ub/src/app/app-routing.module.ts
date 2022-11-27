@@ -5,8 +5,9 @@ import { RecomendationsComponent } from './components/recomendations/recomendati
 import { WelcomeFormComponent } from './components/welcome-form/welcome-form.component';
 
 const routes: Routes = [
-  { path: '', component: WelcomeFormComponent },
-  { path: 'recomendations', component: RecomendationsComponent }
+  { path: 'welcome', component: WelcomeFormComponent },
+  { path: 'recomendations', component: RecomendationsComponent },
+  { path: '', redirectTo: '/welcome', pathMatch: 'full' },
 ];
 
 @NgModule({
