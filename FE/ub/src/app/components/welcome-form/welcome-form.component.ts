@@ -62,6 +62,13 @@ export class WelcomeFormComponent {
     const data = this.welcomeForm.getRawValue();
     this.postForm(data);
   }
+
+  public touchForm() {
+    for (let control in this.welcomeForm.controls) {
+      this.welcomeForm.controls[control].markAsTouched();
+      console.log(control)
+    }
+  }
     
   private postForm(data: IWelcomeFormFields): void {
     const body: WelcomeFormVM = new WelcomeFormVM({

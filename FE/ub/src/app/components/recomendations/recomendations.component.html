@@ -23,12 +23,12 @@
             <h6 class="mb-3">{{welcomeForm?.grade?.recomendation ?? ''}}</h6>
             <qrcode class="qrcodeImage" [qrdata]="welcomeForm?.grade?.recomendationUrl ?? ''" [width]="128" [errorCorrectionLevel]="'M'"></qrcode>
 
-        <div>
-            <h6 class="mb-3" *ngIf="!welcomeForm?.isDocWriter">Учись писать доку)</h6>
+        <div *ngIf="!welcomeForm?.isDocWriter">
+            <h6 class="mb-3">Учись писать доку)</h6>
             <qrcode class="qrcodeImage" [qrdata]="'https://youtu.be/dQw4w9WgXcQ'" [width]="128" [errorCorrectionLevel]="'M'"></qrcode>
         </div>
-        <div>
-            <h6 class="mb-3" *ngIf="!welcomeForm?.isPM">Рекомендуем прокачать навыки управления командой
+        <div *ngIf="!welcomeForm?.isPM">
+            <h6 class="mb-3">Рекомендуем прокачать навыки управления командой
                 Рекомендуемая литература: "Как пасти котов" автор Дж. Рейнвотера."</h6>
             <qrcode class="qrcodeImage" [qrdata]="'https://drive.google.com/drive/folders/18FW1KzIJUfX-UFLdFC2aAKS2VwhAcys8'" [width]="128" [errorCorrectionLevel]="'M'"></qrcode>
         </div>
